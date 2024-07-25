@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Creates a list of Pascal's Triangle integers"""
+
+
 def pascal_triangle(n):
     """
     Returns a list of integers representing Pascal's triangle of n
