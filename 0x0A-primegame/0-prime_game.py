@@ -38,14 +38,14 @@ def isWinner(x, nums):
         nums (list): list of ints that represents n for each round
     """
 
-    # if not x or type(x) is not int:
-    #     return None
+    if not x or type(x) is not int:
+        return None
 
-    # if type(nums) is not list:
-    #     return None
+    if type(nums) is not list:
+        return None
 
-    # if x == 0:
-    #     return None
+    if x == 0:
+        return None
 
     maria_win_count = 0
     ben_win_count = 0
