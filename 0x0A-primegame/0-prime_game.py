@@ -29,59 +29,59 @@ def get_primes(end):
     return primes
 
 
-# def isWinner(x, nums):
-#     """
-#     Determines the winner of the prime game
+def isWinner(x, nums):
+    """
+    Determines the winner of the prime game
 
-#     Args:
-#         x (int): number of rounds played
-#         nums (list): list of ints that represents n for each round
-#     """
+    Args:
+        x (int): number of rounds played
+        nums (list): list of ints that represents n for each round
+    """
 
-#     if not x or type(x) is not int:
-#         return None
+    if not x or type(x) is not int:
+        return None
 
-#     if type(nums) is not list:
-#         return None
+    if type(nums) is not list:
+        return None
 
-#     if x == 0:
-#         return None
+    if x == 0:
+        return None
 
-#     maria_win_count = 0
-#     ben_win_count = 0
+    maria_win_count = 0
+    ben_win_count = 0
 
-#     for num in nums:
-#         round = list(range(1, num + 1))
-#         prime_numbers_in_set = get_primes(num)
+    for num in nums:
+        round = list(range(1, num + 1))
+        prime_numbers_in_set = get_primes(num)
 
-#         if not prime_numbers_in_set:
-#             ben_win_count += 1
-#             break
+        if not prime_numbers_in_set:
+            ben_win_count += 1
+            break
 
-#         marias_turn = True
+        marias_turn = True
 
-#         while (True):
-#             if not prime_numbers_in_set:
-#                 if marias_turn:
-#                     ben_win_count += 1
-#                 else:
-#                     maria_win_count += 1
-#                 break
+        while (True):
+            if not prime_numbers_in_set:
+                if marias_turn:
+                    ben_win_count += 1
+                else:
+                    maria_win_count += 1
+                break
 
-#             smallest_prime = prime_numbers_in_set.pop(0)
-#             round.remove(smallest_prime)
+            smallest_prime = prime_numbers_in_set.pop(0)
+            round.remove(smallest_prime)
 
-#             round = [x for x in round if x % smallest_prime != 0]
+            round = [x for x in round if x % smallest_prime != 0]
 
-#             marias_turn = not marias_turn
+            marias_turn = not marias_turn
 
-#     if maria_win_count > ben_win_count:
-#         return "Maria"
+    if maria_win_count > ben_win_count:
+        return "Maria"
 
-#     if maria_win_count < ben_win_count:
-#         return "Ben"
+    if maria_win_count < ben_win_count:
+        return "Ben"
 
-#     return None
+    return None
 
 # Algorithm
     # Check the type of inputs, if not right return None
@@ -99,7 +99,7 @@ def get_primes(end):
     # Switch the turn
 
 
-def isWinner(x, nums):
+def isWinner2(x, nums):
     """
     Determines the winner of the prime game
 
