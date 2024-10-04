@@ -29,7 +29,7 @@ def get_primes(end):
     return primes
 
 
-def isWinner(x, nums):
+def isWinner3(x, nums):
     """
     Determines the winner of the prime game
 
@@ -154,3 +154,43 @@ def isWinner2(x, nums):
         return "Ben"
 
     return None
+
+
+def isWinner(x, nums):
+    """
+    Determines the winner of the prime game
+
+    Args:
+        x (int): number of rounds played
+        nums (list): list of ints that represents n for each round
+    """
+    if not nums or x < 1:
+        return None
+
+    n = max(nums)
+    primes = [True for _ in range(max(n + 1, 2))]
+
+    for i in range(2, int(n**0.5) + 1):
+        if not primes[i]:
+            continue
+        for j in range(i*i, n + 1, i):
+            primes[j] = False
+
+    primes[0] = primes[1] = False
+
+    counter = 0
+
+    for i in range(len(primes)):
+        if primes[i]:
+            counter += 1
+        primes[i] = counter
+
+    odds = 0
+
+    for n in nums:
+        odds += primes[n] % 2 == 1
+    if odds * 2 == len(nums):
+        return None
+    if odds * 2 > len(nums):
+        return "Maria"
+    return "Ben"
