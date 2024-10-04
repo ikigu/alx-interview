@@ -52,7 +52,7 @@ def get_primes(end):
 
 #     for num in nums:
 #         round = list(range(1, num + 1))
-#         prime_numbers_in_set = get_primes(1, num)
+#         prime_numbers_in_set = get_primes(num)
 
 #         if not prime_numbers_in_set:
 #             ben_win_count += 1
@@ -137,6 +137,7 @@ def isWinner(x, nums):
 
             for number in numbers_in_round:
                 if number % smallest_prime == 0:
+                    primes_list.remove(number)
                     numbers_in_round.remove(number)
 
             marias_turn = not marias_turn
